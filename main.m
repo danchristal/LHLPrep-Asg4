@@ -11,10 +11,9 @@
 NSNumber *maximumNumber(NSArray *numbers){
     
     NSNumber *maxNum = [[NSNumber alloc] init];
-    
-    for (int i=0; i< [numbers count]; i++){
-        if(numbers[i] > maxNum)
-            maxNum = numbers[i];
+    for(NSNumber *number in numbers){
+        if (number > maxNum)
+            maxNum = number;
     }
     return maxNum;
 }
