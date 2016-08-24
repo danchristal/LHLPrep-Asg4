@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-
-
 NSNumber *maximumNumber(NSArray *numbers){
     
     NSNumber *maxNum = [[NSNumber alloc] init];
