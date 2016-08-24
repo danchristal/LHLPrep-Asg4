@@ -11,7 +11,14 @@
 
 
 NSNumber *maximumNumber(NSArray *numbers){
-    return [numbers valueForKeyPath:@"@max.self"];
+    
+    NSNumber *maxNum = [[NSNumber alloc] init];
+    
+    for (int i=0; i< [numbers count]; i++){
+        if(numbers[i] > maxNum)
+            maxNum = numbers[i];
+    }
+    return maxNum;
 }
 
 int main(int argc, const char * argv[]) {
@@ -19,7 +26,10 @@ int main(int argc, const char * argv[]) {
         // Find maximum number in array...
         NSArray *numbers = @[@1, @99, @76, @1024, @194, @999];
         NSNumber *maxNum = maximumNumber(numbers);
-        NSLog(@"Maximum number is..:%@\n", maxNum);
+        if (maxNum != NULL)
+            NSLog(@"Maximum number is..:%@\n", maxNum);
+        else
+            NSLog(@"No numbers found.");
     }
     return 0;
 }
